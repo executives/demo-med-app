@@ -1,0 +1,31 @@
+link(title='timeline-styles' rel='stylesheet' href='../../css/timeline.css')
+div(ng-hide='med_history')
+  #timeline-embed
+
+
+.container(ng-show='med_history')
+  .well
+    form.form-horizontal(name="showHistory")
+      fieldset
+        legend Patient History Data
+        .form-group
+          label.col-md-2.control-label(for='secretKey')
+          .col-md-10
+            input.form-control(name='secretKey' type='text' placeholder='Type in the patient key here' ng-model='secretKey' required)
+        .form-group
+          .col-md-10
+            button.btn.btn-primary(ng-click="request_history()" ng-disabled="showHistory.$invalid") Request History
+            
+//<link title="timeline-styles" rel="stylesheet" href="lib/timeline.css">
+script(src='../../vendor/timeline/timeline.js')
+script.
+  $(document).ready(function(){
+    var embed = document.getElementById('timeline-embed');
+    embed.style.height = '600px';
+    window.timeline = new TL.Timeline('timeline-embed', medical_history, { hash_bookmark: false});
+    window.addEventListener('resize', function() {
+      var embed = document.getElementById('timeline-embed');
+      embed.style.height = '600px';
+      timeline.updateDisplay();
+    });
+  });

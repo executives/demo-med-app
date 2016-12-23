@@ -6,7 +6,14 @@
   "repository": "",
   "author": "Pierce G.",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
     "express": "^3.2.6",
-    "jade": "^1.11.0"
+    "express-session": "^1.14.2",
+    "jade": "^1.11.0",
+    "mongoose": "^4.6.8",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   }
 }
